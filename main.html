@@ -1,16 +1,118 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Adoption Application</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf6e3;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #d33682;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #586e75;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #eee8d5;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="text"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #268bd2;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            border: 2px solid #eee8d5;
+        }
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #859900;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #719e07;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <h1>Dog Adoption Application</h1>
+
+    <form action="/submit-adoption" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Address" required>
+        </div>
+
+        <div class="form-group">
+            <div class="checkbox-group">
+                <input type="checkbox" id="checkbox" name="previous_experience" value="Have you ever lived with a Dog before?">
+                <label for="checkbox">Have you ever lived with a Dog before?</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="multiSelect">Please select your preferred breeds</label>
+            <select id="multiSelect" name="breeds" multiple required>
+                <option value="golden_retriever">Golden Retriever</option>
+                <option value="poodle">Poodle</option>
+                <option value="beagle">Beagle</option>
+                <option value="german_shepherd">German Shepherd</option>
+                <option value="labrador">Labrador</option>
+            </select>
+            <small style="color: #93a1a1;">Hold Ctrl (Cmd) to select multiple</small>
+        </div>
+
+        <input type="submit" id="submit" value="Submit">
+    </form>
 
 </body>
-
 </html>
